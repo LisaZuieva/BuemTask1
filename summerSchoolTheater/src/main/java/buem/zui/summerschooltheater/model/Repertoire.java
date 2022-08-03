@@ -1,6 +1,7 @@
 package buem.zui.summerschooltheater.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 public class Repertoire {
@@ -12,8 +13,8 @@ public class Repertoire {
     //Custom
     private String nameOfTheOpera;
     private String author;
-    private String characters;
-    private String libretto; // or acts, 2-3-4. ENUM?
+    private List<String> characters;
+    private int actsAmount; // or acts, 2-3-4. ENUM?
     private String dateOfPremier;
     private String timeOfPremier;
     private int budget;
@@ -23,13 +24,13 @@ public class Repertoire {
     public Repertoire() {
     }
 
-    public Repertoire(String name, String description, String nameOfTheOpera, String author, String characters, String libretto, String dateOfPremier, String timeOfPremier, int budget) {
+    public Repertoire(String name, String description, String nameOfTheOpera, String author, List<String> characters, int actsAmount, String dateOfPremier, String timeOfPremier, int budget) {
         this.name = name;
         this.description = description;
         this.nameOfTheOpera = nameOfTheOpera;
         this.author = author;
         this.characters = characters;
-        this.libretto = libretto;
+        this.actsAmount = actsAmount;
         this.dateOfPremier = dateOfPremier;
         this.timeOfPremier = timeOfPremier;
         this.budget = budget;
@@ -91,20 +92,20 @@ public class Repertoire {
         this.author = author;
     }
 
-    public String getCharacters() {
+    public List<String> getCharacters() {
         return characters;
     }
 
-    public void setCharacters(String characters) {
+    public void setCharacters(List<String> characters) {
         this.characters = characters;
     }
 
-    public String getLibretto() {
-        return libretto;
+    public int getActsAmount() {
+        return actsAmount;
     }
 
-    public void setLibretto(String libretto) {
-        this.libretto = libretto;
+    public void setActsAmount(int actsAmount) {
+        this.actsAmount = actsAmount;
     }
 
     public String getDateOfPremier() {
@@ -155,7 +156,7 @@ public class Repertoire {
                 ", nameOfTheOpera='" + nameOfTheOpera + '\'' +
                 ", author='" + author + '\'' +
                 ", characters='" + characters + '\'' +
-                ", libretto='" + libretto + '\'' +
+                ", actsAmount='" + actsAmount + '\'' +
                 ", dateOfPremier='" + dateOfPremier + '\'' +
                 ", timeOfPremier='" + timeOfPremier + '\'' +
                 ", budget=" + budget +

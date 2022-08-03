@@ -12,4 +12,5 @@ public class OperaTheater {
     //Custom
     private Actors actors;
     private Repertoire operas;
+    private Contract contracts;
 }

@@ -12,7 +12,7 @@ public class Actors {
     //Мої параметри
     private String firstName;
     private String lastName;
-    private char gender; // do I really need it? do I need to make it ENUM?
+    private ActorsGender gender; // do I really need to do it as ENUM?
     private ActorsVoiceType type;
     private int yearsOfExperience;
     //Опціональні параметри
@@ -24,7 +24,7 @@ public class Actors {
     public Actors() {
     }
 
-    public Actors(String name, String description, String firstName, String lastName, char gender, ActorsVoiceType type, int yearsOfExperience, String regards, String titules) {
+    public Actors(String name, String description, String firstName, String lastName, ActorsGender gender, ActorsVoiceType type, int yearsOfExperience, String regards, String titules) {
         this.name = name;
         this.description = description;
         this.firstName = firstName;
@@ -92,11 +92,11 @@ public class Actors {
         this.lastName = lastName;
     }
 
-    public char getGender() {
+    public ActorsGender getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(ActorsGender gender) {
         this.gender = gender;
     }
 

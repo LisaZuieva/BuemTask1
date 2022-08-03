@@ -3,7 +3,7 @@ package buem.zui.summerschooltheater.model;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Simple {
+public class Item {
     //Variables
     //обов'язкові у будь-якому классі
     private String id;
@@ -14,15 +14,15 @@ public class Simple {
 
     //Constructors
 
-    public Simple() {
+    public Item() {
     }
 
-    public Simple(String name, String description) {
+    public Item(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public Simple(String id, String name, String description, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Item(String id, String name, String description, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -74,8 +74,8 @@ public class Simple {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Simple simple = (Simple) o;
-        return getId().equals(simple.getId());
+        Item item = (Item) o;
+        return getId().equals(item.getId());
     }
 
     @Override
