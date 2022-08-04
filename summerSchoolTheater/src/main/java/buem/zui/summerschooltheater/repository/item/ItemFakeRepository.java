@@ -1,4 +1,4 @@
-package buem.zui.summerschooltheater.repository;
+package buem.zui.summerschooltheater.repository.item;
 
 import buem.zui.summerschooltheater.model.Item;
 import org.springframework.stereotype.Repository;
