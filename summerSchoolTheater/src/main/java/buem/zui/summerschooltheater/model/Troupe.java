@@ -1,38 +1,35 @@
 package buem.zui.summerschooltheater.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
-public class Contract {
+//Opera troupe with solists
+public class Troupe {
     private String id;
     private String name;
     private String description;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
-    //Custom
+    //Custom parametrs
     private String firstName;
     private String lastName;
-    private ActorsGender gender;
-    private TypeOfRole type;
-    private int amountOfWork;
-    private String contractStartDate;
-    private String contractEndDate;
+    private OperaVoiceType type;
+    private int yearsOfExperience;
+    private String regard;
+    //Додати "Партії в репертуарі / які партії виконує"
 
-    public Contract() {
+    public Troupe() {
     }
 
-    public Contract(String name, String description, LocalDateTime createAt, LocalDateTime updateAt, String firstName, String lastName, ActorsGender gender, TypeOfRole type, int amountOfWork, String contractStartDate, String contractEndDate) {
+    public Troupe(String name, String description, String firstName, String lastName, OperaVoiceType type, int yearsOfExperience, String regard) {
         this.name = name;
         this.description = description;
-        this.createAt = createAt;
-        this.updateAt = updateAt;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.gender = gender;
         this.type = type;
-        this.amountOfWork = amountOfWork;
-        this.contractStartDate = contractStartDate;
-        this.contractEndDate = contractEndDate;
+        this.yearsOfExperience = yearsOfExperience;
+        this.regard = regard;
     }
 
     public String getId() {
@@ -91,62 +88,46 @@ public class Contract {
         this.lastName = lastName;
     }
 
-    public ActorsGender getGender() {
-        return gender;
-    }
-
-    public void setGender(ActorsGender gender) {
-        this.gender = gender;
-    }
-
-    public TypeOfRole getType() {
+    public OperaVoiceType getType() {
         return type;
     }
 
-    public void setType(TypeOfRole type) {
+    public void setType(OperaVoiceType type) {
         this.type = type;
     }
 
-    public int getAmountOfWork() {
-        return amountOfWork;
+    public int getYearsOfExperience() {
+        return yearsOfExperience;
     }
 
-    public void setAmountOfWork(int amountOfWork) {
-        this.amountOfWork = amountOfWork;
+    public void setYearsOfExperience(int yearsOfExperience) {
+        this.yearsOfExperience = yearsOfExperience;
     }
 
-    public String getContractStartDate() {
-        return contractStartDate;
+    public String getRegard() {
+        return regard;
     }
 
-    public void setContractStartDate(String contractStartDate) {
-        this.contractStartDate = contractStartDate;
-    }
-
-    public String getContractEndDate() {
-        return contractEndDate;
-    }
-
-    public void setContractEndDate(String contractEndDate) {
-        this.contractEndDate = contractEndDate;
+    public void setRegard(String regard) {
+        this.regard = regard;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Contract contract = (Contract) o;
-        return getId().equals(contract.getId());
+        Troupe troupe = (Troupe) o;
+        return id.equals(troupe.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId());
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
-        return "Contract{" +
+        return "Troupe{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
@@ -154,11 +135,9 @@ public class Contract {
                 ", updateAt=" + updateAt +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", gender=" + gender +
                 ", type=" + type +
-                ", amountOfWork=" + amountOfWork +
-                ", contractStartDate='" + contractStartDate + '\'' +
-                ", contractEndDate='" + contractEndDate + '\'' +
+                ", yearsOfExperience=" + yearsOfExperience +
+                ", regard='" + regard + '\'' +
                 '}';
     }
 }

@@ -1,9 +1,11 @@
 package buem.zui.summerschooltheater.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
+//Repertoir with list of operas
 public class Repertoire {
     private String id;
     private String name;
@@ -11,29 +13,24 @@ public class Repertoire {
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
     //Custom
-    private String nameOfTheOpera;
-    private String author;
-    private List<String> characters;
-    private int actsAmount; // or acts, 2-3-4. ENUM?
-    private String dateOfPremier;
-    private String timeOfPremier;
-    private int budget;
-
-    //Constructors
+    private String titleOfOpera;
+    private String authorOfOpera;
+    private int durationOfPerfomance;
+    private LocalDate dateOfPremier;
+    private int budgetOfPerfomance;
+    //Додати зміст?
 
     public Repertoire() {
     }
 
-    public Repertoire(String name, String description, String nameOfTheOpera, String author, List<String> characters, int actsAmount, String dateOfPremier, String timeOfPremier, int budget) {
+    public Repertoire(String name, String description, String titleOfOpera, String authorOfOpera, int durationOfPerfomance, LocalDate dateOfPremier, int budgetOfPerfomance) {
         this.name = name;
         this.description = description;
-        this.nameOfTheOpera = nameOfTheOpera;
-        this.author = author;
-        this.characters = characters;
-        this.actsAmount = actsAmount;
+        this.titleOfOpera = titleOfOpera;
+        this.authorOfOpera = authorOfOpera;
+        this.durationOfPerfomance = durationOfPerfomance;
         this.dateOfPremier = dateOfPremier;
-        this.timeOfPremier = timeOfPremier;
-        this.budget = budget;
+        this.budgetOfPerfomance = budgetOfPerfomance;
     }
 
     public String getId() {
@@ -76,60 +73,44 @@ public class Repertoire {
         this.updateAt = updateAt;
     }
 
-    public String getNameOfTheOpera() {
-        return nameOfTheOpera;
+    public String getTitleOfOpera() {
+        return titleOfOpera;
     }
 
-    public void setNameOfTheOpera(String nameOfTheOpera) {
-        this.nameOfTheOpera = nameOfTheOpera;
+    public void setTitleOfOpera(String titleOfOpera) {
+        this.titleOfOpera = titleOfOpera;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getAuthorOfOpera() {
+        return authorOfOpera;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthorOfOpera(String authorOfOpera) {
+        this.authorOfOpera = authorOfOpera;
     }
 
-    public List<String> getCharacters() {
-        return characters;
+    public int getDurationOfPerfomance() {
+        return durationOfPerfomance;
     }
 
-    public void setCharacters(List<String> characters) {
-        this.characters = characters;
+    public void setDurationOfPerfomance(int durationOfPerfomance) {
+        this.durationOfPerfomance = durationOfPerfomance;
     }
 
-    public int getActsAmount() {
-        return actsAmount;
-    }
-
-    public void setActsAmount(int actsAmount) {
-        this.actsAmount = actsAmount;
-    }
-
-    public String getDateOfPremier() {
+    public LocalDate getDateOfPremier() {
         return dateOfPremier;
     }
 
-    public void setDateOfPremier(String dateOfPremier) {
+    public void setDateOfPremier(LocalDate dateOfPremier) {
         this.dateOfPremier = dateOfPremier;
     }
 
-    public String getTimeOfPremier() {
-        return timeOfPremier;
+    public int getBudgetOfPerfomance() {
+        return budgetOfPerfomance;
     }
 
-    public void setTimeOfPremier(String timeOfPremier) {
-        this.timeOfPremier = timeOfPremier;
-    }
-
-    public int getBudget() {
-        return budget;
-    }
-
-    public void setBudget(int budget) {
-        this.budget = budget;
+    public void setBudgetOfPerfomance(int budgetOfPerfomance) {
+        this.budgetOfPerfomance = budgetOfPerfomance;
     }
 
     @Override
@@ -153,13 +134,11 @@ public class Repertoire {
                 ", description='" + description + '\'' +
                 ", createAt=" + createAt +
                 ", updateAt=" + updateAt +
-                ", nameOfTheOpera='" + nameOfTheOpera + '\'' +
-                ", author='" + author + '\'' +
-                ", characters='" + characters + '\'' +
-                ", actsAmount='" + actsAmount + '\'' +
-                ", dateOfPremier='" + dateOfPremier + '\'' +
-                ", timeOfPremier='" + timeOfPremier + '\'' +
-                ", budget=" + budget +
+                ", titleOfOpera='" + titleOfOpera + '\'' +
+                ", authorOfOpera='" + authorOfOpera + '\'' +
+                ", durationOfPerfomance=" + durationOfPerfomance +
+                ", dateOfPremier=" + dateOfPremier +
+                ", budgetOfPerfomance=" + budgetOfPerfomance +
                 '}';
     }
 }
